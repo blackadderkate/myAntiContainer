@@ -1,0 +1,7 @@
+{
+  "name": "com.blackadderkate.anticontainerhelper",
+  "description": "Helper App for Simple AntiContainer",
+  "path": "/opt/AntiContainer/AntiContainerHelper",
+  "type": "stdio",
+  "allowed_extensions": [ "SimpleAntiContainer@blackadderkate.com" ]
+}

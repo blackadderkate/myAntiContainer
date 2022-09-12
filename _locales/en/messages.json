@@ -1,0 +1,16 @@
+{
+  "extensionName": {
+    "message": "Simple AntiContainer",
+    "description": "Simple version of AntiContainer."
+  },
+
+  "extensionDescription": {
+    "message": "Simple version of AntiContainer",
+    "description": "Simple version of AntiContainer, uses standard Download API rather than the new DownThemAll extension."
+  },
+
+  "blackadderkateMenu": {
+    "message": "Quick D&ownload",
+    "description": "Download using AntiContainer rules"
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Downloaded File History.</title>
+ <style type="text/css">
+
+@import url("chrome://browser/content/extension.css");
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 9pt !important;
+  display: block !important;
+  user-select: text  !important;
+}
+
+body {
+    padding: 5px;
+}
+
+table, textarea {
+  width: 100%;
+}
+
+td {
+  white-space: nowrap;
+}
+
+.wrap {
+  white-space: normal;
+  max-width: calc(50vw);
+  overflow-wrap: break-word;
+}
+
+th, td {
+  padding-left: 2px;
+  padding-right: 2px;
+  height: 18px;
+}
+.shade0 {
+  background-color: #ffc4c4;
+}
+
+.shade1 {
+  background-color: #ffdbdb;
+}
+
+.section {  border: 1px solid red;
+  border-radius: 6px;
+  background: rgba(128, 128, 128, 0.05);
+  box-shadow: 1px 1px 6px red;
+  margin: 0.75em;
+  padding: 3px;
+  background-color: #ffdbdb
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: 100px 100px 1fr auto;
+  align-items: center;
+}
+
+</style>
+</head>
+<body>
+<script type="module" src="browser-polyfill.min.js"></script>
+<script type="module" src="downloads.js"></script>
+<table id="downloadtable">
+<thead>
+<tr class="shade0" style="height: 24px">
+<th>Original Url</th>
+<!--<th>Actual Url</th>-->
+<th>Save Location</th>
+<th>Filename</th>
+<th>Download Start Time</th>
+<th>Download End Time</th>
+<th>Server Modification Time</th>
+<th style="text-align: center"><a href="#" id="trash"><img src="icons/trash1.png" width="16" height="16" style="vertical-align: bottom"></a></th>
+</tr>
+</thead>
+<tbody id="downloadData">
+</tbody>
+</table>
+<div id="footer">
+  <a href="#" id="importlink">IMPORT</a>
+  <a href="#" id="exportlink">EXPORT</a>
+  <div></div>
+   <input type="button" class="browser-style" id="trashAll" value="Clear History" style="float: right">
+</div>
+   <div id="reallyTrashAllDiv" class="section" style="display: none; float: right">
+   <h3>Are you sure?</h3>
+   <input type="button" class="browser-style" id="cancelTrashAll" value="No" style="float: right">
+   <input type="button" class="browser-style" id="reallyTrashAll" value="Yes" style="">
+   </div>
+
+<div id="importexportdiv" style="display: none">
+<h3>DATA:</h3>
+<textarea id="textarea" rows="10"></textarea>
+<br>
+<input type="button" class="browser-style" id="exportbutton" value="Export" style="display: none">
+<input type="button" class="browser-style" id="importbutton" value="Import" style="display: none">
+<input type="button" class="browser-style" id="cancelimportexport" value="Cancel" style="display: block">
+
+</div>
+</body>
+</html>
